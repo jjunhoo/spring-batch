@@ -10,7 +10,7 @@
 
 ## MySQL 설치
 
-> Docker 설치 및 MySQL 이미지 다운/실행
+> Docker 설치
 
 - Docker 설치 : https://www.docker.com/get-started
     - Download for Mac - Apple Chip
