@@ -32,9 +32,9 @@
 
 > Docker - MySQL 이미지 재실행
 
+- 좌측 Container 탭 클릭 및 'spring-batch-mysql' 이미지 체크 후 Actions 실행
+
 ![img4.png](image/img4.png)
 
-- 위에서 생성한 MySQL 이미지 재사용
-    - spring-batch-mysql 이미지 체크 후 Actions 의 실행 버튼 클릭
 
 
