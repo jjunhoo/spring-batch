@@ -36,5 +36,9 @@
 
 ![img4.png](image/img4.png)
 
+> Docker - MySQL 실행 확인
+
+![img5.png](image/img5.png)
+![img6.png](image/img6.png)
 
 
