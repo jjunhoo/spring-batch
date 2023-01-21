@@ -17,6 +17,8 @@
 
 > Docker - MySQL 이미지 검색 및 다운로드
 
+- tag : 8.0 선택
+
 ![img1.png](image/img1.png)
 
 > Docker - MySQL 이미지 확인
@@ -26,6 +28,8 @@
 > Docker - MySQL : RUN
 
 - 옵션 셋팅
+  - Ports
+    - 3306, 3306 설정
   - Container name, Environment variables (이미지명, MySQL 패스워드, MySQL 유저, MySQL DB)
 
 ![img3.png](image/img3.png)
