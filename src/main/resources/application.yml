@@ -13,6 +13,9 @@ spring:
       username: sa
       password:
       driver-class-name: org.h2.Driver
+  batch:
+    jdbc:
+      initialize-schema: embedded
 
 ---
 spring:
@@ -24,7 +27,7 @@ spring:
       jdbc-url: jdbc:mysql://localhost:3306/spring_batch?useUnicode=true&characterEncoding=utf8
       username: spring-batch-mysql
       password: 123
-      driver-class-name: com.mysql.cj.jdbc.Driver
+      driver-class-name: com.mysql.jdbc.Driver
   batch:
     jdbc:
-      initialize-schema: never
+      initialize-schema: always
