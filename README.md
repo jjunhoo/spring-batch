@@ -85,3 +85,11 @@ use spring_batch;
 ````
 
 ![img9.png](image/img9.png)
+
+> 인텔리제이 접속 확인
+
+- user, password, database 입력
+    - user 설정 및 권한 부여에서 생성한 user / password 입력
+
+![img10.png](image/img10.png)
+![img11.png](image/img11.png)
