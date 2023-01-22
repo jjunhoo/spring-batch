@@ -31,3 +31,7 @@ spring:
   batch:
     jdbc:
       initialize-schema: always
+
+    #배치 Job 수동 실행을 위한 설정
+    #job:
+      #enabled: false
