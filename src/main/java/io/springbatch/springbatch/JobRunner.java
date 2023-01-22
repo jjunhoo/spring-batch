@@ -12,6 +12,7 @@ import lombok.RequiredArgsConstructor;
 
 
 // JobLauncher 수동 실행을 위한 클래스
+/*
 @Component
 @RequiredArgsConstructor
 public class JobRunner implements ApplicationRunner {
@@ -33,3 +34,4 @@ public class JobRunner implements ApplicationRunner {
     }
 
 }
+*/

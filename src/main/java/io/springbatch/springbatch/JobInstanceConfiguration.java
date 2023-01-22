@@ -26,6 +26,7 @@ public class JobInstanceConfiguration {
      * Job 정의
      * @return
      */
+    /*
     @Bean
     public Job job() {
         return jobBuilderFactory.get("job")
@@ -33,11 +34,13 @@ public class JobInstanceConfiguration {
                 .next(step2())
                 .build();
     }
+    */
 
     /**
      * Step 정의
      * @return
      */
+    /*
     @Bean
     public Step step1() {
         return stepBuilderFactory.get("step1")
@@ -50,11 +53,13 @@ public class JobInstanceConfiguration {
                 })
                 .build();
     }
+    */
 
     /**
      * Step 정의
      * @return
      */
+    /*
     @Bean
     public Step step2() {
         return stepBuilderFactory.get("step2")
@@ -67,4 +72,5 @@ public class JobInstanceConfiguration {
                 })
                 .build();
     }
+    */
 }
