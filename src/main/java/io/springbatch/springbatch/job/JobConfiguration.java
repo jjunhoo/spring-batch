@@ -1,4 +1,4 @@
-package io.springbatch.springbatch;
+package io.springbatch.springbatch.job;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -14,43 +14,44 @@ import org.springframework.context.annotation.Configuration;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
+/**
+ * Job
+ */
 @Slf4j
 @Configuration
 @RequiredArgsConstructor
-public class DBJobConfiguration {
+public class JobConfiguration {
 
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
 
+    /**
+     * Job 정의
+     * - SimpleJob, FlowJob, GroupAwareJob, JsrFlowJob
+     * @return
+     */
     /*
     @Bean
     public Job job() {
         return jobBuilderFactory.get("job")
-                .start(step1())
-                .next(step2())
-                .build();
+                .start(step1()) // SimpleJobBuilder > start()
+                .next(step2()) // SimpleJobBuilder > next() : private List<Step> steps = new ArrayList(); 에 해당 step 을 add()
+                .build(); // SimpleJobBuilder > build()
     }
+    */
 
+    /**
+     * Step 정의
+     * @return
+     */
+    /*
     @Bean
     public Step step1() {
         return stepBuilderFactory.get("step1")
                 .tasklet(new Tasklet() {
                     @Override
                     public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext) throws Exception {
-                        log.info("[step1] executed");
-                        return RepeatStatus.FINISHED;
-                    }
-                })
-                .build();
-    }
-
-    @Bean
-    public Step step2() {
-        return stepBuilderFactory.get("step2")
-                .tasklet(new Tasklet() {
-                    @Override
-                    public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext) throws Exception {
-                        log.info("[step2] executed");
+                        log.info("[step1] - execute");
                         return RepeatStatus.FINISHED;
                     }
                 })
@@ -58,4 +59,22 @@ public class DBJobConfiguration {
     }
     */
 
+    /**
+     * Step 정의
+     * @return
+     */
+    /*
+    @Bean
+    public Step step2() {
+        return stepBuilderFactory.get("step2")
+                .tasklet(new Tasklet() {
+                    @Override
+                    public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext) throws Exception {
+                        log.info("[step2] - execute");
+                        return RepeatStatus.FINISHED;
+                    }
+                })
+                .build();
+    }
+    */
 }
