@@ -22,6 +22,7 @@ public class DBJobConfiguration {
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
 
+    /*
     @Bean
     public Job job() {
         return jobBuilderFactory.get("job")
@@ -55,5 +56,6 @@ public class DBJobConfiguration {
                 })
                 .build();
     }
+    */
 
 }
