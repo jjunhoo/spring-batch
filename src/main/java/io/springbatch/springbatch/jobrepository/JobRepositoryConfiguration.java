@@ -22,7 +22,7 @@ import lombok.extern.slf4j.Slf4j;
 @Configuration
 @RequiredArgsConstructor
 public class JobRepositoryConfiguration {
-
+    /*
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
     private final JobExecutionListener jobRepositoryListener; // 리스너 추가
@@ -61,4 +61,5 @@ public class JobRepositoryConfiguration {
                 })
                 .build();
     }
+     */
 }
