@@ -1,4 +1,4 @@
-package io.springbatch.springbatch.jobparameter;
+package io.springbatch.springbatch.domain.jobparameter;
 
 import java.util.Date;
 

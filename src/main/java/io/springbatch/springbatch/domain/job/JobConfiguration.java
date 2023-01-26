@@ -1,4 +1,4 @@
-package io.springbatch.springbatch.jobinstance;
+package io.springbatch.springbatch.domain.job;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
@@ -15,27 +15,28 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
 /**
- * JobInstance
+ * Job
  */
 @Slf4j
 @Configuration
 @RequiredArgsConstructor
-public class JobInstanceConfiguration {
+public class JobConfiguration {
 
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
 
     /**
      * Job 정의
+     * - SimpleJob, FlowJob, GroupAwareJob, JsrFlowJob
      * @return
      */
     /*
     @Bean
     public Job job() {
         return jobBuilderFactory.get("job")
-                .start(step1())
-                .next(step2())
-                .build();
+                .start(step1()) // SimpleJobBuilder > start()
+                .next(step2()) // SimpleJobBuilder > next() : private List<Step> steps = new ArrayList(); 에 해당 step 을 add()
+                .build(); // SimpleJobBuilder > build()
     }
     */
 

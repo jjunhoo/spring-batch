@@ -1,4 +1,4 @@
-package io.springbatch.springbatch.step;
+package io.springbatch.springbatch.domain.step;
 
 import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;

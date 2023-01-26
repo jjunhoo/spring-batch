@@ -1,4 +1,4 @@
-package io.springbatch.springbatch.jobrepository;
+package io.springbatch.springbatch.domain.jobrepository;
 
 import javax.sql.DataSource;
 

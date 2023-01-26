@@ -1,9 +1,6 @@
-package io.springbatch.springbatch.jobparameter;
-
-import java.util.Map;
+package io.springbatch.springbatch.domain.jobexecution;
 
 import org.springframework.batch.core.Job;
-import org.springframework.batch.core.JobParameters;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.StepContribution;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
@@ -17,18 +14,18 @@ import org.springframework.context.annotation.Configuration;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 
-
 /**
- * JobParameter
+ * JobExecution
  */
 /*
 @Slf4j
 @Configuration
 @RequiredArgsConstructor
-public class JobParameterConfiguration {
+public class JobExecutionConfiguration {
 
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
+
 
     @Bean
     public Job job() {
@@ -44,20 +41,7 @@ public class JobParameterConfiguration {
                 .tasklet(new Tasklet() {
                     @Override
                     public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext) throws Exception {
-                        log.info("[JobParameterConfiguration] - step1 execute");
-
-                        // 1. StepContribution 를 활용한 파라미터 정보 (리턴 타입 : JobParameters)
-                        JobParameters jobParameters = stepContribution.getStepExecution().getJobExecution().getJobParameters();
-                        jobParameters.getString("name");
-                        jobParameters.getLong("seq");
-                        jobParameters.getDate("date");
-                        jobParameters.getDouble("age");
-
-                        log.info("[name] : " + jobParameters.getString("name") + " / [seq] : " + jobParameters.getLong("seq") + " / [date] : " + jobParameters.getDate("date") + " / [age] : " + jobParameters.getDouble("age"));
-
-                        // 2. ChunkContext 를 활용한 파라미터 정보 (리턴 타입 : Map<String, Object>)
-                        Map<String, Object> jobParameters1 = chunkContext.getStepContext().getJobParameters();
-
+                        log.info("[JobExecutionConfiguration] - step1 execute");
                         return RepeatStatus.FINISHED;
                     }
                 })
@@ -67,12 +51,11 @@ public class JobParameterConfiguration {
     @Bean
     public Step step2() {
         return stepBuilderFactory.get("step2")
-                .tasklet(new Tasklet() {
-                    @Override
-                    public RepeatStatus execute(StepContribution stepContribution, ChunkContext chunkContext) throws Exception {
-                        log.info("[JobParameterConfiguration] - step2 execute");
-                        return RepeatStatus.FINISHED;
-                    }
+                .tasklet((stepContribution, chunkContext) -> {
+                    log.info("[JobExecutionConfiguration] - step2 execute");
+                    // 예외 발생으로 인하여 'BATCH_JOB_EXECUTION' 테이블의 'STATUS' 컬럼이 'FAILED' 로 INSERT 됨
+                    // throw new RuntimeException("[JobExecutionConfiguration] - step2 execute fail"); // java.lang.RuntimeException: [JobExecutionConfiguration] - step2 execute fail
+                    return RepeatStatus.FINISHED;
                 })
                 .build();
     }
