@@ -17,6 +17,7 @@ import lombok.extern.slf4j.Slf4j;
 @Configuration
 @RequiredArgsConstructor
 public class ExecutionContextConfiguration {
+    /*
     private final JobBuilderFactory jobBuilderFactory;
     private final StepBuilderFactory stepBuilderFactory;
     private final ExecutionContextTasklet1 executionContextTasklet1;
@@ -61,4 +62,5 @@ public class ExecutionContextConfiguration {
                 .tasklet(executionContextTasklet4)
                 .build();
     }
+    */
 }
